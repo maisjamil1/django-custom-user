@@ -7,8 +7,12 @@
   Hi {{ user.username }}!
   <p><a href="{% url 'logout' %}">Log Out</a></p>
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Log In</a> |
-  <a href="{% url 'signup' %}">Sign Up</a>
+  <p>You are not logged in :(</p>
+  {% load static %}
+  <img src="{% static "img/12.jpg" %}" alt="My image">
+  <br>
+  
+  <a href="{% url 'login' %}"><button>Log In</button></a> 
+  <a href="{% url 'signup' %}"><button>Sign Up</button></a>
 {% endif %}
 {% endblock %}
